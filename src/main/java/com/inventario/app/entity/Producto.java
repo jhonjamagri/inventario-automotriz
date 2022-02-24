@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.boot.origin.SystemEnvironmentOrigin;
+
 @Entity
 @Table(name = "productos")
 public class Producto implements Serializable{
@@ -16,7 +18,7 @@ public class Producto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	//atributos del CRUD	
-	
+		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

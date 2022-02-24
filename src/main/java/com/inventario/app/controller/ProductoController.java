@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.inventario.app.entity.Producto;
 import com.inventario.app.service.ProductoService;
-
-import ch.qos.logback.core.joran.util.beans.BeanUtil;
 
 @RestController
 @RequestMapping("/api/productos")
@@ -60,8 +56,6 @@ public class ProductoController {
 		if(!producto.isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
-				
-		//BeanUtils.copyProperties(productoDetails, producto.get());
 		
 		producto.get().setNombre(productoDetails.getNombre());
 		producto.get().setNombreRegistro(productoDetails.getNombreRegistro());
@@ -102,5 +96,7 @@ public class ProductoController {
 		
 		return productos;
 	}
+	
+	
 	
 }
